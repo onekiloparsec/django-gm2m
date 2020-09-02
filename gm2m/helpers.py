@@ -95,6 +95,9 @@ class GM2MModelMetaclass(type):
         return other is cls \
                or other == RECURSIVE_RELATIONSHIP_CONSTANT
 
+    def __hash__(cls):
+        return hash(RECURSIVE_RELATIONSHIP_CONSTANT)
+
     def lower(cls):
         return str(cls)
 
